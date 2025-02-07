@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuning Tunes Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tuning Tunes Explorer</h1>
+            <p>Compare different historical tuning systems and their mathematical foundations</p>
+        </header>
+
+        <div class="main-content">
+            <div class="tuning-controls">
+                <div class="tuning-selector">
+                    <h2>Tuning System</h2>
+                    <select id="tuningSelect">
+                        <option value="12-tet">12-Tone Equal Temperament</option>
+                        <option value="pythagorean">Pythagorean Tuning</option>
+                        <option value="just">Just Intonation</option>
+                        <option value="meantone">Quarter-Comma Meantone</option>
+                    </select>
+                    <div class="info-text">
+                        <p>Compare how different tuning systems handle intervals and harmonies</p>
+                    </div>
+                </div>
+                
+                <div class="playback-controls">
+                    <h2>Playback Controls</h2>
+                    <div class="button-group">
+                        <button id="playBtn">Play</button>
+                        <button id="stopBtn">Stop</button>
+                        <button id="loopBtn">Loop</button>
+                    </div>
+                    <div class="volume-control">
+                        <label for="volume">Volume:</label>
+                        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.7">
+                    </div>
+                </div>
+
+                <div class="melody-selector">
+                    <h2>Select Pattern</h2>
+                    <select id="melodySelect">
+                        <option value="scale">Major Scale</option>
+                        <option value="triad">Major Triad</option>
+                        <option value="dominantSeventh">Dominant Seventh</option>
+                        <option value="minorThird">Minor Third</option>
+                        <option value="majorThird">Major Third</option>
+                        <option value="perfectFifth">Perfect Fifth</option>
+                        <option value="diminishedFifth">Diminished Fifth</option>
+                        <option value="sustain">Sustained Major Chord</option>
+                    </select>
+                    <div class="info-text">
+                        <p>Listen for differences in intervals and chord qualities</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization">
+                <div class="frequency-comparison">
+                    <h2>Frequency Comparison Table</h2>
+                    <div class="comparison-controls">
+                        <label for="referenceNote">Reference Note:</label>
+                        <select id="referenceNote">
+                            <option value="C4">C4 (Middle C)</option>
+                            <option value="A4">A4 (440 Hz)</option>
+                        </select>
+                    </div>
+                    <div id="frequencyTable" class="frequency-table"></div>
+                    <div class="info-text">
+                        <p>Compare exact frequencies across tuning systems</p>
+                    </div>
+                </div>
+                <div class="frequency-display">
+                    <h2>Frequency Analysis</h2>
+                    <div id="frequencyPlot"></div>
+                </div>
+                <div class="math-panel">
+                    <h2>Mathematical Foundation</h2>
+                    <div id="mathContent" class="math-content"></div>
+                </div>
+            </div>
+
+            <div class="historical-context">
+                <h2>Historical Context</h2>
+                <div id="historyContent" class="history-content"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

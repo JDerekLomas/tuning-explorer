@@ -1,0 +1,203 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --border-color: #dcdde1;
+    --hover-color: #2980b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.tuning-controls {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tuning-selector,
+.playback-controls,
+.melody-selector {
+    margin-bottom: 2rem;
+}
+
+select,
+button,
+input[type="range"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.volume-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.visualization {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.frequency-display {
+    margin-bottom: 2rem;
+}
+
+#frequencyPlot {
+    width: 100%;
+    height: 300px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.math-content,
+.history-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.frequency-comparison {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.comparison-controls {
+    margin-bottom: 1rem;
+}
+
+.frequency-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.frequency-table th,
+.frequency-table td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.frequency-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.frequency-table td {
+    font-family: monospace;
+}
+
+.frequency-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.frequency-table .highlight {
+    background-color: #e3f2fd;
+}
+
+.historical-context {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+}
